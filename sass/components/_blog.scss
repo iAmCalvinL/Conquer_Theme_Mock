@@ -1,0 +1,33 @@
+// blog section variables
+$blog-header-text-color: $gray;
+$blog-text-color: $light-black;
+$blog-btn-text-color: $light-black;
+$blog-btn-border-color: $gray2;
+$blog-header-font-size: 20px;
+$blog-para-font-size: 14px;
+
+.blog {
+  grid-area: blog;
+  @include flex-row();
+  article {
+    @include flex-column();
+    padding-bottom: 2%;
+    background-color: $content-background-color;
+    width: 48.5%;
+    img { width: 100%; }
+    h2 { 
+      @include text-properties($blog-header-font-size, 700, 
+      $margin: 2% auto, $color: $blog-header-text-color);
+    }
+    p {
+      @include text-properties($blog-para-font-size, $line-height: 1.6em,
+      $margin: 1% 5% 5% 5%, $color: $blog-text-color);
+    }
+    .btn-white { 
+      color: $blog-btn-text-color;
+      font-size: 18px;
+      border: 1px solid $blog-btn-border-color;
+      background-color: $btn-white-color;
+    }
+  }
+}

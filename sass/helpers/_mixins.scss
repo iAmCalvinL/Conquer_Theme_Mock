@@ -1,0 +1,53 @@
+@mixin load-static-background-image($url) {
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+@mixin load-dynamic-background-image($url) {
+  background-image: url($url);
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+@mixin text-properties($fontsize, $fontweight: normal, 
+$texttransform: null, $margin: null, $textshadow: null, 
+$color: null, $padding: null, $line-height: null, $textdecoration: null,
+$fontstyle: null) {
+  font-size: $fontsize;
+  text-transform: $texttransform;
+  font-weight: $fontweight;
+  margin: $margin;
+  text-shadow: $textshadow;
+  color: $color;
+  padding: $padding;
+  line-height: $line-height;
+  text-decoration: $textdecoration;
+  font-style: $fontstyle;
+}
+
+@mixin flex-column() {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin flex-row() {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin form-properties() {
+  background: rgba(242, 242, 242, 0.4);
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  line-height: 1.42857143;
+  min-width: 90%;
+  transition: border-color ease-in-out .15s,
+  box-shadow ease-in-out .15s;
+  &::placeholder { color: inherit; }
+}

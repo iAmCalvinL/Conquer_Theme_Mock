@@ -1,0 +1,16 @@
+body {
+  font-family: $body-font;
+  font-size: $font-size;
+  display: grid;
+  grid-template-columns: 2fr repeat(8, 1fr) 2fr;
+  grid-template-rows: auto;
+  grid-template-areas: 
+  "header header header header header header header header header header"
+  "section1 section1 section1 section1 section1 section1 section1 section1 section1 section1"
+  ". section2 section2 section2 section2 section2 section2 section2 section2 ."
+  ". blog blog blog blog blog blog blog blog ."
+  "section3 section3 section3 section3 section3 section3 section3 section3 section3 section3"
+  ". testimonial testimonial testimonial testimonial testimonial testimonial testimonial testimonial ."
+  "section4 section4 section4 section4 section4 section4 section4 section4 section4 section4"
+  "footer footer footer footer footer footer footer footer footer footer";
+}

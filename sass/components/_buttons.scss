@@ -1,0 +1,14 @@
+.btn {
+  padding: 10px 30px;      
+  border-radius: 5px;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+.btn-green { background-color: $btn-green-color; }
+.btn-blue { background-color: $btn-blue-color; }
+.btn-red { background-color: $btn-red-color; }
+.btn-white { background-color: $btn-white-color; }
+
+.section2 { article { .btn { color: $section2-btn-text-color; }}}
+.testimonial { article { .btn { color: $testimonial-btn-text-color; }}}

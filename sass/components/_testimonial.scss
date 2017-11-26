@@ -1,0 +1,44 @@
+$testimonial-header-font-size: 20px;
+$testimonial-header-line-height: 1.6m;
+$testimonial-header-text-color: $gray;
+$testimonial-header-font-weight: 700;
+$testimonial-para-font-size: 14px;
+$testimonial-para-line-height: 1.6em;
+$testimonial-text-color: $light-black;
+
+.testimonial {
+  grid-area: testimonial;
+  @include flex-column();
+  h2 {
+    @include text-properties($testimonial-header-font-size, $testimonial-header-font-weight,
+    capitalize, 20px 0 5px 0, $line-height: $testimonial-header-line-height,
+    $color: $testimonial-header-text-color);
+  }
+  p {
+    @include text-properties($testimonial-para-font-size, $margin: 1% 5%, 
+    $line-height: $testimonial-para-line-height, $color: $testimonial-text-color);
+  }
+  .btn { border: 1px solid #cdcdcd; }
+  img { width: 100%; }
+  .testimonial-small {
+    margin-bottom: 4%;
+    @include flex-row();
+    article {
+      @include flex-column();
+      justify-content: space-between;
+      background-color: $content-background-color;
+      width: 22%;
+      padding-bottom: 3%;
+      .btn { margin-top: 10%; }
+    }
+  }
+  .testimonial-big {
+    margin-bottom: 4%;
+    article {
+      @include flex-column();
+      justify-content: space-between;
+      background-color: $content-background-color;
+      padding-bottom: 3%;
+    }
+  }
+}

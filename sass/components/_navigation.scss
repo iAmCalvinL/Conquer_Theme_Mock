@@ -1,0 +1,36 @@
+// Navigation Variables
+$nav-background-color: $dark-gray;
+$nav-btn-text-color: $white;
+$nav-btn-color: $dark-gray;
+$nav-btn-hover-color: $medium-gray;
+$nav-btn-font-size: 20px;
+$nav-btn-line-height: 20px;
+
+.navigation {
+  background-color: $nav-background-color;
+  grid-area: header;
+  nav { 
+    margin: 0 25%;
+    ul { 
+      @include flex-row();
+      padding: 4% 0;
+      li { 
+        list-style-type: none;
+        a { 
+          @include text-properties($nav-btn-font-size,
+          $texttransform: capitalize, $color: $nav-btn-text-color,
+          $line-height: $nav-btn-line-height, $textdecoration: none);
+          
+          width: 100%;
+          height: 100%;
+          background-color: $nav-btn-color; 
+          border: 1px solid #646d7c;
+          padding: 15px 25px;
+          // padding: 5% 10%;
+          // padding: 0.9375em 1.5625em;
+          &:hover { background-color: $nav-btn-hover-color; }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+// Section 1 Variables
+$section1-header-text-color: $white;
+$section1-text-color: $white;
+$section1-header-shadow-color: $pure-black;
+$section1-header4-shadow-color: $light-black;
+$section1-header-font-size: 70px;
+$section1-header4-font-size: 25px;
+
+.section1 {
+  @include load-static-background-image('../img/bg-1.jpg');
+  grid-area: section1;
+  text-align: center;
+  padding: 10%;
+  color: $section1-text-color;
+  h1 {
+    @include text-properties($section1-header-font-size, normal,
+    uppercase, 20px 0 10px 0, 2px 2px $section1-header-shadow-color,
+    $section1-header-text-color);
+  }
+  h4 {
+    @include text-properties($section1-header4-font-size, normal,
+    capitalize, 10px 0 10px 0, 1px 1px $section1-header4-shadow-color);
+  }
+}

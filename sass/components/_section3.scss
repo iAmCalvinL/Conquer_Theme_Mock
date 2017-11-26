@@ -1,0 +1,23 @@
+$section3-header-font-size: 36px;
+$section3-header-font-weight: 500;
+$section3-header-text-color: $white;
+$section3-header-text-shadow: $gray3;
+$section3-text-color: $white;
+$section3-text-font-size: 18px;
+
+.section3 {
+  grid-area: section3;
+  @include load-dynamic-background-image("../img/bg-2.jpg");
+  padding: 5% 0 5% 0;
+  text-align: center;
+  margin: 4% 0 4% 0;
+  h1 {
+    @include text-properties($section3-header-font-size, $section3-header-font-weight,
+    capitalize, 20px auto, 2px 2px $section3-header-text-shadow, 
+    $section3-header-text-color, $line-height: 1.1);
+  }
+  p {
+    @include text-properties($section3-text-font-size, $margin: 0,
+    $color: $section3-text-color, $line-height: 1.6em);
+  }
+}

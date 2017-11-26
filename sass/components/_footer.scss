@@ -1,0 +1,29 @@
+$footer-header-text-color: $gray;
+$footer-header-font-size: 32px;
+$footer-header-font-style: italic;
+$footer-p-text-color: $light-gray;
+$footer-p-font-size: 14px;
+$footer-p-font-style: italic;
+$footer-p-line-height: 1.6em;
+
+.footer {
+  grid-area: footer;
+  @include flex-column();
+  h1 {
+    @include text-properties($footer-header-font-size, normal, 
+    $color: $footer-header-text-color, $fontstyle: $footer-header-font-style,
+    $margin: 35px 0 25px 0);
+  }
+  p {
+    @include text-properties($footer-p-font-size, normal, $margin: 0 0 30px 0,
+    $color: $footer-p-text-color, $line-height: $footer-p-line-height,
+    $fontstyle: $footer-p-font-style);
+  }
+  hr { 
+    border: 0;
+    border-top: 1px solid #eee;
+    display: block; 
+    margin: 20px 0;
+    width: 100%;
+  }
+}
