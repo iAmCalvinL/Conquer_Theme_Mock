@@ -21,12 +21,15 @@ $section2-para-font-size: 14px;
       @include text-properties($section2-para-font-size, normal, 
       $margin: 1% 5% 5% 5%, $color: $section2-text-color, 
       $line-height: 1.6em);
+      flex: 310
     }
     h2 { 
       @include text-properties($section2-header2-font-size, 700, 
       $margin: 2% auto);
       text-align: center;
+      flex: 10;
     } 
+    .btn{ flex: 1; }
     .green-text { color: $section2-green-header-text-color; }
     .blue-text { color: $section2-blue-header-text-color; }
     .gray-text { color: $section2-gray-header-text-color; }

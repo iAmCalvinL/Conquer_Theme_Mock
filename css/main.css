@@ -131,12 +131,16 @@ body {
       font-weight: normal;
       margin: 1% 5% 5% 5%;
       color: #333;
-      line-height: 1.6em; }
+      line-height: 1.6em;
+      flex: 310; }
     .section2 article h2 {
       font-size: 20px;
       font-weight: 700;
       margin: 2% auto;
-      text-align: center; }
+      text-align: center;
+      flex: 10; }
+    .section2 article .btn {
+      flex: 1; }
     .section2 article .green-text {
       color: #178A27; }
     .section2 article .blue-text {
@@ -208,15 +212,17 @@ body {
     font-size: 20px;
     text-transform: capitalize;
     font-weight: 700;
-    margin: 20px 0 5px 0;
+    margin: 3% 0;
     color: #666666;
-    line-height: 1.6m; }
+    line-height: 1.6m;
+    flex: 1; }
   .testimonial p {
     font-size: 14px;
     font-weight: normal;
-    margin: 1% 5%;
+    margin: 0 5%;
     color: #333;
-    line-height: 1.6em; }
+    line-height: 1.6em;
+    flex: 5; }
   .testimonial .btn {
     border: 1px solid #cdcdcd; }
   .testimonial img {
@@ -234,7 +240,8 @@ body {
       width: 22%;
       padding-bottom: 3%; }
       .testimonial .testimonial-small article .btn {
-        margin-top: 10%; }
+        margin-top: 10%;
+        flex: 1; }
   .testimonial .testimonial-big {
     margin-bottom: 4%; }
     .testimonial .testimonial-big article {
@@ -244,6 +251,10 @@ body {
       justify-content: space-between;
       background-color: #F2F2F2;
       padding-bottom: 3%; }
+      .testimonial .testimonial-big article .btn {
+        flex: 1; }
+      .testimonial .testimonial-big article h2 {
+        margin: 1% 0; }
 
 .section4 {
   grid-area: section4;

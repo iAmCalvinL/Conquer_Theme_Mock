@@ -11,12 +11,14 @@ $testimonial-text-color: $light-black;
   @include flex-column();
   h2 {
     @include text-properties($testimonial-header-font-size, $testimonial-header-font-weight,
-    capitalize, 20px 0 5px 0, $line-height: $testimonial-header-line-height,
+    capitalize, 3% 0, $line-height: $testimonial-header-line-height,
     $color: $testimonial-header-text-color);
+    flex: 1;
   }
   p {
-    @include text-properties($testimonial-para-font-size, $margin: 1% 5%, 
+    @include text-properties($testimonial-para-font-size, $margin: 0 5%, 
     $line-height: $testimonial-para-line-height, $color: $testimonial-text-color);
+    flex: 5;
   }
   .btn { border: 1px solid #cdcdcd; }
   img { width: 100%; }
@@ -29,7 +31,10 @@ $testimonial-text-color: $light-black;
       background-color: $content-background-color;
       width: 22%;
       padding-bottom: 3%;
-      .btn { margin-top: 10%; }
+      .btn { 
+        margin-top: 10%; 
+        flex: 1;
+      }
     }
   }
   .testimonial-big {
@@ -39,6 +44,8 @@ $testimonial-text-color: $light-black;
       justify-content: space-between;
       background-color: $content-background-color;
       padding-bottom: 3%;
+      .btn { flex: 1; }
+      h2 { margin: 1% 0; }
     }
   }
 }
