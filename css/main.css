@@ -40,27 +40,38 @@ body {
 
 .navigation {
   background-color: #383E4C;
-  grid-area: header; }
+  grid-area: header;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-areas: ". nav-menu ."; }
   .navigation nav {
-    margin: 0 25%; }
+    grid-area: nav-menu;
+    text-align: center; }
     .navigation nav ul {
       display: flex;
+      display: flex;
       justify-content: space-between;
-      padding: 4% 0; }
+      margin: 0;
+      padding: 0; }
       .navigation nav ul li {
-        list-style-type: none; }
+        list-style-type: none;
+        flex-grow: 1;
+        text-align: center;
+        padding: 0.7vw; }
         .navigation nav ul li a {
-          font-size: 20px;
+          font-size: 1.4vw;
           text-transform: capitalize;
           font-weight: normal;
           color: #fff;
-          line-height: 20px;
+          line-height: 1.4vw;
           text-decoration: none;
-          width: 100%;
-          height: 100%;
           background-color: #383E4C;
-          border: 1px solid #646d7c;
-          padding: 15px 25px; }
+          display: block;
+          text-decoration: none;
+          color: white;
+          padding: 1vw;
+          border: 1px solid #646d7c; }
           .navigation nav ul li a:hover {
             background-color: #49505F; }
 

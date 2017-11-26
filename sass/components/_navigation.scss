@@ -1,34 +1,42 @@
-// Navigation Variables
 $nav-background-color: $dark-gray;
 $nav-btn-text-color: $white;
 $nav-btn-color: $dark-gray;
 $nav-btn-hover-color: $medium-gray;
-$nav-btn-font-size: 20px;
-$nav-btn-line-height: 20px;
+$nav-btn-font-size: 1.4vw;
+$nav-btn-line-height: 1.4vw;
 
 .navigation {
   background-color: $nav-background-color;
   grid-area: header;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-areas:
+    ". nav-menu .";
   nav { 
-    margin: 0 25%;
-    ul { 
+    grid-area: nav-menu;
+    text-align: center;
+    ul {
+      display: flex;
       @include flex-row();
-      padding: 4% 0;
-      li { 
+      margin: 0;
+      padding: 0;
+      li {
         list-style-type: none;
-        a { 
+        flex-grow: 1;
+        text-align: center;
+        padding: 0.7vw;
+        a {
           @include text-properties($nav-btn-font-size,
           $texttransform: capitalize, $color: $nav-btn-text-color,
           $line-height: $nav-btn-line-height, $textdecoration: none);
-          
-          width: 100%;
-          height: 100%;
           background-color: $nav-btn-color; 
-          border: 1px solid #646d7c;
-          padding: 15px 25px;
-          // padding: 5% 10%;
-          // padding: 0.9375em 1.5625em;
           &:hover { background-color: $nav-btn-hover-color; }
+          display: block;
+          text-decoration: none;
+          color: white;
+          padding: 1vw;
+          border: 1px solid #646d7c;
         }
       }
     }
