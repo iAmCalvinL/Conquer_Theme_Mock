@@ -2,8 +2,10 @@ $section1-header-text-color: $white;
 $section1-text-color: $white;
 $section1-header-shadow-color: $pure-black;
 $section1-header4-shadow-color: $light-black;
-$section1-header-font-size: 70px;
-$section1-header4-font-size: 25px;
+// $section1-header-font-size: 70px;
+// $section1-header4-font-size: 25px;
+$section1-header-font-size: 3.65vw;
+$section1-header4-font-size: 1.30vw;
 
 .section1 {
   @include load-static-background-image('../img/bg-1.jpg');

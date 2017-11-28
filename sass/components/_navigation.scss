@@ -2,43 +2,128 @@ $nav-background-color: $dark-gray;
 $nav-btn-text-color: $white;
 $nav-btn-color: $dark-gray;
 $nav-btn-hover-color: $medium-gray;
-$nav-btn-font-size: 1.4vw;
-$nav-btn-line-height: 1.4vw;
+$nav-btn-font-size-lg: 20px;
+$nav-btn-font-size-md: 16px;
+$nav-btn-line-height: 20px;
 
 .navigation {
-  background-color: $nav-background-color;
-  grid-area: header;
-  display: grid;
-  grid-template-rows: auto;
-  grid-template-columns: 1fr 2fr 1fr;
-  grid-template-areas:
-    ". nav-menu .";
-  nav { 
-    grid-area: nav-menu;
-    text-align: center;
-    ul {
-      display: flex;
-      @include flex-row();
-      margin: 0;
-      padding: 0;
-      li {
-        list-style-type: none;
-        flex-grow: 1;
-        text-align: center;
-        padding: 0.7vw;
-        a {
-          @include text-properties($nav-btn-font-size,
-          $texttransform: capitalize, $color: $nav-btn-text-color,
-          $line-height: $nav-btn-line-height, $textdecoration: none);
-          background-color: $nav-btn-color; 
-          &:hover { background-color: $nav-btn-hover-color; }
-          display: block;
-          text-decoration: none;
-          color: white;
-          padding: 1vw;
-          border: 1px solid #646d7c;
+  #toggle-menu { display: none; }
+  @media only screen and (min-width: 1000px) {
+    .hamburger { display: none; }
+    background-color: $nav-background-color;
+    grid-area: header;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas:
+      ". nav-menu .";
+    nav { 
+      grid-area: nav-menu;
+      text-align: center;
+      ul {
+        display: flex;
+        @include flex-row();
+        margin: 0;
+        padding: 0;
+        height: 78px;
+        li {
+          list-style-type: none;
+          flex-grow: 1;
+          text-align: center;
+          padding: 10px 5px;
+          a {
+            @include text-properties($nav-btn-font-size-lg,
+            $texttransform: capitalize, $color: $nav-btn-text-color,
+            $line-height: $nav-btn-line-height, $textdecoration: none);
+            background-color: $nav-btn-color; 
+            &:hover { background-color: $nav-btn-hover-color; }
+            display: block;
+            text-decoration: none;
+            -webkit-text-size-adjust: 100%;
+            color: white;
+            padding: 15px 25px;
+            border: 1px solid #646d7c;
+          }
         }
       }
+    }
+  }
+
+  @media only screen and (max-width: 999px) and (min-width: 768px) {
+    .hamburger { display: none; }
+    background-color: $nav-background-color;
+    grid-area: header;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-areas:
+      ". nav-menu .";
+    nav { 
+      grid-area: nav-menu;
+      text-align: center;
+      ul {
+        display: flex;
+        @include flex-row();
+        margin: 0;
+        padding: 0;
+        li {
+          list-style-type: none;
+          flex-grow: 1;
+          text-align: center;
+          padding: 6px;
+          a {
+            @include text-properties($nav-btn-font-size-md,
+            $texttransform: capitalize, $color: $nav-btn-text-color,
+            $line-height: $nav-btn-line-height, $textdecoration: none);
+            background-color: $nav-btn-color; 
+            &:hover { background-color: $nav-btn-hover-color; }
+            display: block;
+            text-decoration: none;
+            color: white;
+            padding: 15px 25px;
+            border: 1px solid #646d7c;
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    grid-area: header;
+    .menu-on {
+      top: 15px;
+      right: 25px;
+      z-index: 101;
+      position: fixed;
+      .hamburger {
+        margin: 8px 15px 8px 0;
+        padding: 9px 10px;
+        border: 1px solid rgb(51, 51, 51);
+        background-color: rgb(51, 51, 51);
+        color: #fff;
+        border-radius: 4px;
+      }
+    }
+    nav {
+      position: fixed;
+      top: 59px;
+      display: none;
+      box-sizing: border-box;
+      line-height: 20px;
+      ul {
+        background-color: $nav-background-color;
+        text-align: center;
+        li {
+          list-style-type: none;
+          a {
+            text-decoration: none;
+            color: white;
+          }
+        }
+      }
+    }
+    #toggle-menu:checked ~ nav {
+      display: block;
     }
   }
 }
