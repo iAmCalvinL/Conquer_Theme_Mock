@@ -1,47 +1,49 @@
-$nav-background-color: $dark-gray;
-$nav-btn-text-color: $white;
-$nav-btn-color: $dark-gray;
-$nav-btn-hover-color: $medium-gray;
-$nav-btn-font-size-lg: 20px;
-$nav-btn-font-size-md: 16px;
-$nav-btn-line-height: 20px;
+$navBackgroundColor: $dark-gray;
+$navBtnTextColor: $white;
+$navBtnHoverColor: $medium-gray;
+$navBtnFontSizeLg: 20px;
+$navBtnFontSizeMd: 16px;
+$navBtnFontSizeSm: 16px;
+$navBtnLineHeight: 20px;
 
 .navigation {
   #toggle-menu { display: none; }
+  .hamburger { display: none; }
+  display: grid;
+  grid-area: header;
+  grid-template-rows: auto;
+  grid-template-areas:
+    ". nav-menu .";
+  background-color: $navBackgroundColor;
+  nav { text-align: center; }
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+  a {
+    display: block;
+    text-decoration: none;
+    &:hover { background-color: $navBtnHoverColor; }
+  }
+
   @media only screen and (min-width: 1000px) {
-    .hamburger { display: none; }
-    background-color: $nav-background-color;
-    grid-area: header;
-    display: grid;
-    grid-template-rows: auto;
     grid-template-columns: 1fr 2fr 1fr;
-    grid-template-areas:
-      ". nav-menu .";
     nav { 
       grid-area: nav-menu;
-      text-align: center;
       ul {
-        display: flex;
-        @include flex-row();
-        margin: 0;
-        padding: 0;
         height: 78px;
+        @include flex-row();
         li {
           list-style-type: none;
           flex-grow: 1;
           text-align: center;
           padding: 10px 5px;
           a {
-            @include text-properties($nav-btn-font-size-lg,
-            $texttransform: capitalize, $color: $nav-btn-text-color,
-            $line-height: $nav-btn-line-height, $textdecoration: none);
-            background-color: $nav-btn-color; 
-            &:hover { background-color: $nav-btn-hover-color; }
-            display: block;
-            text-decoration: none;
+            @include text-properties($navBtnFontSizeLg,
+            $texttransform: capitalize, $color: $navBtnTextColor,
+            $line-height: $navBtnLineHeight, $textdecoration: none,
+            $padding: 15px 25px);
             -webkit-text-size-adjust: 100%;
-            color: white;
-            padding: 15px 25px;
             border: 1px solid #646d7c;
           }
         }
@@ -50,37 +52,22 @@ $nav-btn-line-height: 20px;
   }
 
   @media only screen and (max-width: 999px) and (min-width: 768px) {
-    .hamburger { display: none; }
-    background-color: $nav-background-color;
-    grid-area: header;
-    display: grid;
-    grid-template-rows: auto;
     grid-template-columns: 1fr 4fr 1fr;
-    grid-template-areas:
-      ". nav-menu .";
     nav { 
       grid-area: nav-menu;
       text-align: center;
       ul {
         display: flex;
         @include flex-row();
-        margin: 0;
-        padding: 0;
         li {
           list-style-type: none;
           flex-grow: 1;
-          text-align: center;
           padding: 6px;
           a {
-            @include text-properties($nav-btn-font-size-md,
-            $texttransform: capitalize, $color: $nav-btn-text-color,
-            $line-height: $nav-btn-line-height, $textdecoration: none);
-            background-color: $nav-btn-color; 
-            &:hover { background-color: $nav-btn-hover-color; }
-            display: block;
-            text-decoration: none;
-            color: white;
-            padding: 15px 25px;
+            @include text-properties($navBtnFontSizeMd,
+            $texttransform: capitalize, $color: $navBtnTextColor,
+            $line-height: $navBtnLineHeight, $textdecoration: none,
+            $padding: 15px 25px);
             border: 1px solid #646d7c;
           }
         }
@@ -89,35 +76,38 @@ $nav-btn-line-height: 20px;
   }
 
   @media only screen and (max-width: 767px) {
-    grid-area: header;
-    .menu-on {
+    display: block;
+    .menu-switch {
       top: 15px;
       right: 25px;
       z-index: 101;
       position: fixed;
       .hamburger {
+        display: block;
         margin: 8px 15px 8px 0;
         padding: 9px 10px;
-        border: 1px solid rgb(51, 51, 51);
-        background-color: rgb(51, 51, 51);
-        color: #fff;
+        border: 1px solid $navBackgroundColor;
+        background-color: $navBackgroundColor;
+        color: $navBtnTextColor;
         border-radius: 4px;
       }
     }
     nav {
       position: fixed;
-      top: 59px;
+      width: 100%;
+      top: 43px;
       display: none;
       box-sizing: border-box;
-      line-height: 20px;
+      padding: 1.4em;
       ul {
-        background-color: $nav-background-color;
-        text-align: center;
+        background-color: $navBackgroundColor;
         li {
+          border-bottom: 1px solid #999;
           list-style-type: none;
+          &:last-child { border-bottom: none; }
           a {
-            text-decoration: none;
-            color: white;
+            @include text-properties($navBtnFontSizeSm, $texttransform: capitalize, 
+            $color: $navBtnTextColor, $line-height: 20px, $padding: 10px 0);
           }
         }
       }

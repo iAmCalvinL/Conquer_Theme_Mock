@@ -3,25 +3,39 @@ body {
   font-size: $font-size;
   display: grid;
 
-  @media only screen and (min-width: 768px) {
-    grid-template-columns: 2fr repeat(8, 1fr) 2fr;
+  @media only screen and (min-width: 1000px) {
+    grid-template-columns: 1fr 10fr 1fr;
     grid-template-rows: auto;
-    grid-template-areas: 
-    "header header header header header header header header header header"
-    "section1 section1 section1 section1 section1 section1 section1 section1 section1 section1"
-    ". section2 section2 section2 section2 section2 section2 section2 section2 ."
-    ". blog blog blog blog blog blog blog blog ."
-    "section3 section3 section3 section3 section3 section3 section3 section3 section3 section3"
-    ". testimonial testimonial testimonial testimonial testimonial testimonial testimonial testimonial ."
-    "section4 section4 section4 section4 section4 section4 section4 section4 section4 section4"
-    "footer footer footer footer footer footer footer footer footer footer";
+    grid-template-areas:
+      "header header header"
+      "section1 section1 section1"
+      ". section2 ."
+      ". blog ."
+      "section3 section3 section3"
+      ". testimonial ."
+      "section4 section4 section4"
+      "footer footer footer";
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 999px) {
+    grid-template-columns: 1fr 22fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "header header header"
+      "section1 section1 section1"
+      ". section2 ."
+      ". blog ."
+      "section3 section3 section3"
+      ". testimonial ."
+      "section4 section4 section4"
+      "footer footer footer";
   }
 
   @media only screen and (max-width: 767px) {
     grid-template-columns: 1fr 10fr 1fr;
     grid-template-rows: auto;
     grid-template-areas:
-      ". header ."
+      "header header header"
       "section1 section1 section1"
       ". section2 ."
       ". blog ."

@@ -1,36 +1,60 @@
-$section2-green-header-text-color: $green;
-$section2-blue-header-text-color: $blue;
-$section2-gray-header-text-color: $gray;
-$section2-text-color: $light-black;
-$section2-header2-font-size: 20px;
-$section2-para-font-size: 14px;
+$section2GreenHeaderTextColor: $green;
+$section2BlueHeaderTextColor: $blue;
+$section2GrayHeaderTextColor: $gray;
+$section2TextColor: $light-black;
+$section2Header2FontSize: 20px;
+$section2ParaFontSize: 14px;
 
 .section2 {
   grid-area: section2;
-  @include flex-row();
-  margin: 6% auto;
+  article { background-color: $content-background-color; }
+  margin: 6% 0;
+  img { width: 100%; }
+  p { 
+    @include text-properties($section2ParaFontSize, normal, 
+    $margin: 1% 5% 5% 5%, $color: $section2TextColor, 
+    $line-height: 1.6em);
+    flex: 310
+  }
+  h2 { 
+    @include text-properties($section2Header2FontSize, 700, 
+    $margin: 2% auto);
+    text-align: center;
+    flex: 10;
+  } 
+  .btn{ flex: 1; }
+  .green-text { color: $section2GreenHeaderTextColor; }
+  .blue-text { color: $section2BlueHeaderTextColor; }
+  .gray-text { color: $section2GrayHeaderTextColor; }
   article {
     @include flex-column();
     justify-content: space-between;
-    width: 32%;
-    background-color: $content-background-color;
-    padding-bottom: 2%;
-    img { width: 100%; }
-    p { 
-      @include text-properties($section2-para-font-size, normal, 
-      $margin: 1% 5% 5% 5%, $color: $section2-text-color, 
-      $line-height: 1.6em);
-      flex: 310
+  }
+  @media only screen and (min-width: 768px) {
+    @include flex-row();
+    article {
+      width: 32%;
+      padding-bottom: 2%;
     }
-    h2 { 
-      @include text-properties($section2-header2-font-size, 700, 
-      $margin: 2% auto);
-      text-align: center;
-      flex: 10;
-    } 
-    .btn{ flex: 1; }
-    .green-text { color: $section2-green-header-text-color; }
-    .blue-text { color: $section2-blue-header-text-color; }
-    .gray-text { color: $section2-gray-header-text-color; }
+  }
+
+  @media only screen and (max-width: 767px) and (min-width: 480px){
+    @include flex-column();
+    justify-content: space-between;
+    margin: 6% 11%;
+    article { 
+      margin: 6% 0;
+      padding-bottom: 4%;
+    }
+  }
+
+  @media only screen and (max-width: 479px) {
+    @include flex-column();
+    justify-content: space-between;
+    margin: 6%;
+    article { 
+      margin: 6% 0;
+      padding-bottom: 4%;
+    }
   }
 }

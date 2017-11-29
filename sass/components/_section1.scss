@@ -3,23 +3,38 @@ $section1-text-color: $white;
 $section1-header-shadow-color: $pure-black;
 $section1-header4-shadow-color: $light-black;
 // $section1-header-font-size: 70px;
-// $section1-header4-font-size: 25px;
-$section1-header-font-size: 3.65vw;
-$section1-header4-font-size: 1.30vw;
+// $section1Header4FontSize: 25px;
+$section1HeaderFontSize: 70px;
+$section1Header4FontSize: 25px;
+$section1HeaderFontSizeSm: 55px;
+$section1Header4FontSizeSm: 25px;
 
 .section1 {
-  @include load-static-background-image('../img/bg-1.jpg');
   grid-area: section1;
   text-align: center;
-  padding: 10%;
   color: $section1-text-color;
+  @include load-static-background-image('../img/bg-1.jpg');
   h1 {
-    @include text-properties($section1-header-font-size, normal,
+    @include text-properties($section1HeaderFontSize, normal,
     uppercase, 20px 0 10px 0, 2px 2px $section1-header-shadow-color,
     $section1-header-text-color);
   }
   h4 {
-    @include text-properties($section1-header4-font-size, normal,
+    @include text-properties($section1Header4FontSize, normal,
     capitalize, 10px 0 10px 0, 1px 1px $section1-header4-shadow-color);
+  }
+  @include flex-column();
+  justify-content: center;
+  @media only screen and (min-width: 480px) {
+    height: 75vh;
+    padding: 15px;
+    color: $section1-text-color;
+  }
+
+  @media only screen and (max-width: 479px) {
+    height: 50vh;
+    h1 { font-size: $section1HeaderFontSizeSm; }
+    h4 { font-size: $section1Header4FontSizeSm; }
+    padding: 0 20px;
   }
 }
