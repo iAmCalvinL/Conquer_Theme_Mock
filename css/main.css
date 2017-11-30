@@ -342,10 +342,7 @@ body {
     line-height: 1.6em; }
 
 .testimonial {
-  grid-area: testimonial;
-  display: flex;
-  flex-direction: column;
-  align-items: center; }
+  grid-area: testimonial; }
   .testimonial h2 {
     font-size: 20px;
     text-transform: capitalize;
@@ -365,17 +362,18 @@ body {
     border: 1px solid #cdcdcd; }
   .testimonial img {
     width: 100%; }
+  .testimonial article {
+    background-color: #F2F2F2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; }
   @media only screen and (min-width: 1000px) {
     .testimonial .testimonial-small {
       margin-bottom: 4%;
       display: flex;
       justify-content: space-between; }
       .testimonial .testimonial-small article {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        background-color: #F2F2F2;
         width: 23%;
         min-width: 186px;
         padding-bottom: 3%; }
@@ -385,32 +383,59 @@ body {
     .testimonial .testimonial-big {
       margin-bottom: 4%; }
       .testimonial .testimonial-big article {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        background-color: #F2F2F2;
         padding-bottom: 3%; }
-        .testimonial .testimonial-big article .btn {
-          flex: 1; }
         .testimonial .testimonial-big article h2 {
           margin: 1% 0; } }
-  @media only screen and (min-width: 768px) and (max-width: 999px) {
-    .testimonial {
-      grid-area: testimonial; }
-      .testimonial .testimonial-small {
-        display: grid;
-        grid-template-rows: auto;
-        grid-template-columns: 2fr 1fr 2fr;
-        grid-template-areas: "test1 . test2" "test3 . test4"; }
-        .testimonial .testimonial-small #testimonial1 {
-          grid-area: test1; }
-        .testimonial .testimonial-small #testimonial2 {
-          grid-area: test2; }
-        .testimonial .testimonial-small #testimonial3 {
-          grid-area: test3; }
-        .testimonial .testimonial-small #testimonial4 {
-          grid-area: test4; } }
+  @media only screen and (min-width: 621px) and (max-width: 999px) {
+    .testimonial .testimonial-small {
+      display: grid;
+      grid-template-rows: auto;
+      grid-template-columns: 1fr 6fr 1fr 6fr 1fr;
+      grid-template-areas: ". test1 . test2 ." ". test3 . test4 ."; }
+      .testimonial .testimonial-small #testimonial1 {
+        grid-area: test1; }
+      .testimonial .testimonial-small #testimonial2 {
+        grid-area: test2; }
+      .testimonial .testimonial-small #testimonial3 {
+        grid-area: test3; }
+      .testimonial .testimonial-small #testimonial4 {
+        grid-area: test4; }
+      .testimonial .testimonial-small article {
+        margin-bottom: 12%;
+        padding-bottom: 4%; }
+      .testimonial .testimonial-small .btn {
+        margin-top: 10%; }
+    .testimonial .testimonial-big {
+      margin-bottom: 4%; }
+      .testimonial .testimonial-big article {
+        padding-bottom: 3%; }
+        .testimonial .testimonial-big article p {
+          margin-bottom: 3%; } }
+  @media only screen and (max-width: 620px) {
+    .testimonial .testimonial-small {
+      display: grid;
+      grid-template-rows: auto;
+      grid-template-columns: 1fr 7fr 1fr;
+      grid-template-areas: ". test1 ." ". test2 ." ". test3 ." ". test4 ."; }
+      .testimonial .testimonial-small #testimonial1 {
+        grid-area: test1; }
+      .testimonial .testimonial-small #testimonial2 {
+        grid-area: test2; }
+      .testimonial .testimonial-small #testimonial3 {
+        grid-area: test3; }
+      .testimonial .testimonial-small #testimonial4 {
+        grid-area: test4; }
+      .testimonial .testimonial-small article {
+        margin-bottom: 12%;
+        padding-bottom: 7%; }
+      .testimonial .testimonial-small .btn {
+        margin-top: 4%; }
+    .testimonial .testimonial-big {
+      margin-bottom: 4%; }
+      .testimonial .testimonial-big article {
+        padding-bottom: 3%; }
+        .testimonial .testimonial-big article p {
+          margin-bottom: 3%; } }
 
 .section4 {
   grid-area: section4;
