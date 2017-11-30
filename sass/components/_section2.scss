@@ -18,7 +18,7 @@ $section2ParaFontSize: 14px;
   }
   h2 { 
     @include text-properties($section2Header2FontSize, 700, 
-    $margin: 2% auto);
+    $margin: 4% 0 1% 0);
     text-align: center;
     flex: 10;
   } 
@@ -41,9 +41,9 @@ $section2ParaFontSize: 14px;
   @media only screen and (max-width: 767px) and (min-width: 480px){
     @include flex-column();
     justify-content: space-between;
-    margin: 6% 11%;
+    // margin: 6% 0;
     article { 
-      margin: 6% 0;
+      margin: 3% 0;
       padding-bottom: 4%;
     }
   }
@@ -51,9 +51,8 @@ $section2ParaFontSize: 14px;
   @media only screen and (max-width: 479px) {
     @include flex-column();
     justify-content: space-between;
-    margin: 6%;
     article { 
-      margin: 6% 0;
+      margin: 3% 0;
       padding-bottom: 4%;
     }
   }

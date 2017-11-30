@@ -1,32 +1,44 @@
-$blog-header-text-color: $gray;
-$blog-text-color: $light-black;
-$blog-btn-text-color: $light-black;
-$blog-btn-border-color: $gray2;
-$blog-header-font-size: 20px;
-$blog-para-font-size: 14px;
+$blogHeaderTextColor: $gray;
+$blogTextColor: $light-black;
+$blogBtnTextColor: $light-black;
+$blogBtnBorderColor: $gray2;
+$blogHeaderFontSize: 20px;
+$blogParaFontSize: 14px;
 
 .blog {
   grid-area: blog;
-  @include flex-row();
-  article {
-    @include flex-column();
-    padding-bottom: 2%;
-    background-color: $content-background-color;
-    width: 48.5%;
-    img { width: 100%; }
-    h2 { 
-      @include text-properties($blog-header-font-size, 700, 
-      $margin: 2% auto, $color: $blog-header-text-color);
+  h2 { 
+    @include text-properties($blogHeaderFontSize, 700, 
+    $margin: 2% auto, $color: $blogHeaderTextColor);
+  }
+  p {
+    @include text-properties($blogParaFontSize, $line-height: 1.6em,
+    $margin: 1% 5% 5% 5%, $color: $blogTextColor);
+  }
+  .btn-white { 
+    color: $blogBtnTextColor;
+    font-size: 18px;
+    border: 1px solid $blogBtnBorderColor;
+    background-color: $btn-white-color;
+  }
+  img { width: 100%; }
+  article { background-color: $content-background-color; }
+  // width: 90vw;
+  @media only screen and (min-width: 768px) {
+    @include flex-row();
+    article {
+      @include flex-column();
+      padding-bottom: 2%;
+      width: 48.5%;
     }
-    p {
-      @include text-properties($blog-para-font-size, $line-height: 1.6em,
-      $margin: 1% 5% 5% 5%, $color: $blog-text-color);
-    }
-    .btn-white { 
-      color: $blog-btn-text-color;
-      font-size: 18px;
-      border: 1px solid $blog-btn-border-color;
-      background-color: $btn-white-color;
+  }
+
+  @media only screen and (max-width: 767px) {
+    article {
+      margin: 4% 0;
+      padding-bottom: 4%;
+      @include flex-column();
+      justify-content: space-between;
     }
   }
 }

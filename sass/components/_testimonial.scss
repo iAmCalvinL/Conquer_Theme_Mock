@@ -8,7 +8,6 @@ $testimonial-text-color: $light-black;
 
 .testimonial {
   grid-area: testimonial;
-  @include flex-column();
   h2 {
     @include text-properties($testimonial-header-font-size, $testimonial-header-font-weight,
     capitalize, 3% 0, $line-height: $testimonial-header-line-height,
@@ -20,32 +19,52 @@ $testimonial-text-color: $light-black;
     $line-height: $testimonial-para-line-height, $color: $testimonial-text-color);
     flex: 5;
   }
+  @include flex-column();
   .btn { border: 1px solid #cdcdcd; }
   img { width: 100%; }
-  .testimonial-small {
-    margin-bottom: 4%;
-    @include flex-row();
-    article {
-      @include flex-column();
-      justify-content: space-between;
-      background-color: $content-background-color;
-      width: 22%;
-      padding-bottom: 3%;
-      .btn { 
-        margin-top: 10%; 
-        flex: 1;
+  @media only screen and (min-width: 1000px) {
+    .testimonial-small {
+      margin-bottom: 4%;
+      @include flex-row();
+      article {
+        @include flex-column();
+        justify-content: space-between;
+        background-color: $content-background-color;
+        width: 23%;
+        min-width: 186px;
+        padding-bottom: 3%;
+        .btn { 
+          margin-top: 10%; 
+          flex: 1;
+        }
+      }
+    }
+    .testimonial-big {
+      margin-bottom: 4%;
+      article {
+        @include flex-column();
+        justify-content: space-between;
+        background-color: $content-background-color;
+        padding-bottom: 3%;
+        .btn { flex: 1; }
+        h2 { margin: 1% 0; }
       }
     }
   }
-  .testimonial-big {
-    margin-bottom: 4%;
-    article {
-      @include flex-column();
-      justify-content: space-between;
-      background-color: $content-background-color;
-      padding-bottom: 3%;
-      .btn { flex: 1; }
-      h2 { margin: 1% 0; }
+
+  @media only screen and (min-width: 768px) and (max-width: 999px) {
+    grid-area: testimonial;
+    .testimonial-small {
+      display: grid;
+      grid-template-rows: auto;
+      grid-template-columns: 2fr 1fr 2fr;
+      grid-template-areas: 
+        "test1 . test2"
+        "test3 . test4";
+      #testimonial1 { grid-area: test1; }
+      #testimonial2 { grid-area: test2; }
+      #testimonial3 { grid-area: test3; }
+      #testimonial4 { grid-area: test4; }
     }
   }
 }

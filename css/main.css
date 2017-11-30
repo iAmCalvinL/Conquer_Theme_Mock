@@ -33,22 +33,16 @@ blockquote:before, blockquote:after, q:before, q:after {
 body {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 16px;
-  display: grid; }
-  @media only screen and (min-width: 1000px) {
+  display: grid;
+  grid-template-rows: auto; }
+  @media only screen and (min-width: 768px) {
     body {
-      grid-template-columns: 1fr 10fr 1fr;
-      grid-template-rows: auto;
-      grid-template-areas: "header header header" "section1 section1 section1" ". section2 ." ". blog ." "section3 section3 section3" ". testimonial ." "section4 section4 section4" "footer footer footer"; } }
-  @media only screen and (min-width: 768px) and (max-width: 999px) {
-    body {
-      grid-template-columns: 1fr 22fr 1fr;
-      grid-template-rows: auto;
-      grid-template-areas: "header header header" "section1 section1 section1" ". section2 ." ". blog ." "section3 section3 section3" ". testimonial ." "section4 section4 section4" "footer footer footer"; } }
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-areas: "header header header header header header header header header header header header" "section1 section1 section1 section1 section1 section1 section1 section1 section1 section1 section1 section1" ". section2 section2 section2 section2 section2 section2 section2 section2 section2 section2 ." ". blog blog blog blog blog blog blog blog blog blog ." "section3 section3 section3 section3 section3 section3 section3 section3 section3 section3 section3 section3" ". testimonial testimonial testimonial testimonial testimonial testimonial testimonial testimonial testimonial testimonial ." "section4 section4 section4 section4 section4 section4 section4 section4 section4 section4 section4 section4" "footer footer footer footer footer footer footer footer footer footer footer footer"; } }
   @media only screen and (max-width: 767px) {
     body {
-      grid-template-columns: 1fr 10fr 1fr;
-      grid-template-rows: auto;
-      grid-template-areas: "header header header" "section1 section1 section1" ". section2 ." ". blog ." "section3 section3 section3" ". testimonial ." "section4 section4 section4" "footer footer footer"; } }
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-areas: "header header header header header header header header header header header header" "section1 section1 section1 section1 section1 section1 section1 section1 section1 section1 section1 section1" ". . section2 section2 section2 section2 section2 section2 section2 section2 . ." ". blog blog blog blog blog blog blog blog blog blog ." "section3 section3 section3 section3 section3 section3 section3 section3 section3 section3 section3 section3" ". testimonial testimonial testimonial testimonial testimonial testimonial testimonial testimonial testimonial testimonial ." "section4 section4 section4 section4 section4 section4 section4 section4 section4 section4 section4 section4" "footer footer footer footer footer footer footer footer footer footer footer footer"; } }
 
 .navigation {
   display: grid;
@@ -237,7 +231,7 @@ body {
   .section2 h2 {
     font-size: 20px;
     font-weight: 700;
-    margin: 2% auto;
+    margin: 4% 0 1% 0;
     text-align: center;
     flex: 10; }
   .section2 .btn {
@@ -265,51 +259,60 @@ body {
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: space-between;
-      margin: 6% 11%; }
+      justify-content: space-between; }
       .section2 article {
-        margin: 6% 0;
+        margin: 3% 0;
         padding-bottom: 4%; } }
   @media only screen and (max-width: 479px) {
     .section2 {
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: space-between;
-      margin: 6%; }
+      justify-content: space-between; }
       .section2 article {
-        margin: 6% 0;
+        margin: 3% 0;
         padding-bottom: 4%; } }
 
 .blog {
-  grid-area: blog;
-  display: flex;
-  justify-content: space-between; }
+  grid-area: blog; }
+  .blog h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 2% auto;
+    color: #666666; }
+  .blog p {
+    font-size: 14px;
+    font-weight: normal;
+    margin: 1% 5% 5% 5%;
+    color: #333;
+    line-height: 1.6em; }
+  .blog .btn-white {
+    color: #333;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    background-color: #fff; }
+  .blog img {
+    width: 100%; }
   .blog article {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: 2%;
-    background-color: #F2F2F2;
-    width: 48.5%; }
-    .blog article img {
-      width: 100%; }
-    .blog article h2 {
-      font-size: 20px;
-      font-weight: 700;
-      margin: 2% auto;
-      color: #666666; }
-    .blog article p {
-      font-size: 14px;
-      font-weight: normal;
-      margin: 1% 5% 5% 5%;
-      color: #333;
-      line-height: 1.6em; }
-    .blog article .btn-white {
-      color: #333;
-      font-size: 18px;
-      border: 1px solid #ccc;
-      background-color: #fff; }
+    background-color: #F2F2F2; }
+  @media only screen and (min-width: 768px) {
+    .blog {
+      display: flex;
+      justify-content: space-between; }
+      .blog article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 2%;
+        width: 48.5%; } }
+  @media only screen and (max-width: 767px) {
+    .blog article {
+      margin: 4% 0;
+      padding-bottom: 4%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between; } }
 
 .section3 {
   grid-area: section3;
@@ -318,9 +321,11 @@ body {
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  padding: 5% 0 5% 0;
+  padding: 7% 0 7% 0;
   text-align: center;
-  margin: 4% 0 4% 0; }
+  margin: 4% 0; }
+  .section3 .section3Text {
+    margin: 0 4%; }
   .section3 h1 {
     font-size: 36px;
     text-transform: capitalize;
@@ -360,34 +365,52 @@ body {
     border: 1px solid #cdcdcd; }
   .testimonial img {
     width: 100%; }
-  .testimonial .testimonial-small {
-    margin-bottom: 4%;
-    display: flex;
-    justify-content: space-between; }
-    .testimonial .testimonial-small article {
+  @media only screen and (min-width: 1000px) {
+    .testimonial .testimonial-small {
+      margin-bottom: 4%;
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
-      background-color: #F2F2F2;
-      width: 22%;
-      padding-bottom: 3%; }
-      .testimonial .testimonial-small article .btn {
-        margin-top: 10%;
-        flex: 1; }
-  .testimonial .testimonial-big {
-    margin-bottom: 4%; }
-    .testimonial .testimonial-big article {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
-      background-color: #F2F2F2;
-      padding-bottom: 3%; }
-      .testimonial .testimonial-big article .btn {
-        flex: 1; }
-      .testimonial .testimonial-big article h2 {
-        margin: 1% 0; }
+      justify-content: space-between; }
+      .testimonial .testimonial-small article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #F2F2F2;
+        width: 23%;
+        min-width: 186px;
+        padding-bottom: 3%; }
+        .testimonial .testimonial-small article .btn {
+          margin-top: 10%;
+          flex: 1; }
+    .testimonial .testimonial-big {
+      margin-bottom: 4%; }
+      .testimonial .testimonial-big article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #F2F2F2;
+        padding-bottom: 3%; }
+        .testimonial .testimonial-big article .btn {
+          flex: 1; }
+        .testimonial .testimonial-big article h2 {
+          margin: 1% 0; } }
+  @media only screen and (min-width: 768px) and (max-width: 999px) {
+    .testimonial {
+      grid-area: testimonial; }
+      .testimonial .testimonial-small {
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: 2fr 1fr 2fr;
+        grid-template-areas: "test1 . test2" "test3 . test4"; }
+        .testimonial .testimonial-small #testimonial1 {
+          grid-area: test1; }
+        .testimonial .testimonial-small #testimonial2 {
+          grid-area: test2; }
+        .testimonial .testimonial-small #testimonial3 {
+          grid-area: test3; }
+        .testimonial .testimonial-small #testimonial4 {
+          grid-area: test4; } }
 
 .section4 {
   grid-area: section4;
