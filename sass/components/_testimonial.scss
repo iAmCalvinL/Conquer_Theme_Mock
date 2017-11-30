@@ -1,28 +1,28 @@
-$testimonial-header-font-size: 20px;
-$testimonial-header-line-height: 1.6m;
-$testimonial-header-text-color: $gray;
-$testimonial-header-font-weight: 700;
-$testimonial-para-font-size: 14px;
-$testimonial-para-line-height: 1.6em;
-$testimonial-text-color: $light-black;
+$testimonialHeaderFontSize: 20px;
+$testimonialHeaderLineHeight: 1.6m;
+$testimonialHeaderTextColor: $gray;
+$testimonialHeaderFontWeight: 700;
+$testimonialParaFontSize: 14px;
+$testimonialParaLineHeight: 1.6em;
+$testimonialTextColor: $light-black;
 
 .testimonial {
   grid-area: testimonial;
   h2 {
-    @include text-properties($testimonial-header-font-size, $testimonial-header-font-weight,
-    capitalize, 3% 0, $line-height: $testimonial-header-line-height,
-    $color: $testimonial-header-text-color);
+    @include text-properties($testimonialHeaderFontSize, $testimonialHeaderFontWeight,
+    capitalize, 3% 0, $line-height: $testimonialHeaderLineHeight,
+    $color: $testimonialHeaderTextColor);
     flex: 1;
   }
   p {
-    @include text-properties($testimonial-para-font-size, $margin: 0 5%, 
-    $line-height: $testimonial-para-line-height, $color: $testimonial-text-color);
+    @include text-properties($testimonialParaFontSize, $margin: 0 5%, 
+    $line-height: $testimonialParaLineHeight, $color: $testimonialTextColor);
     flex: 5;
   }
   .btn { border: 1px solid #cdcdcd; }
   img { width: 100%; }
   article {
-    background-color: $content-background-color;
+    background-color: $contentBackgroundColor;
     @include flex-column();
     justify-content: space-between;
   }

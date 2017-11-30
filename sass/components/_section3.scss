@@ -1,9 +1,9 @@
-$section3-header-font-size: 36px;
-$section3-header-font-weight: 500;
-$section3-header-text-color: $white;
-$section3-header-text-shadow: $gray3;
-$section3-text-color: $white;
-$section3-text-font-size: 18px;
+$section3HeaderFontSize: 36px;
+$section3HeaderFontWeight: 500;
+$section3HeaderTextColor: $white;
+$section3HeaderTextShadow: $gray3;
+$section3TextColor: $white;
+$section3TextFontSize: 18px;
 
 .section3 {
   grid-area: section3;
@@ -13,12 +13,12 @@ $section3-text-font-size: 18px;
   margin: 4% 0;
   .section3Text { margin: 0 4%; }
   h1 {
-    @include text-properties($section3-header-font-size, $section3-header-font-weight,
-    capitalize, 20px auto, 2px 2px $section3-header-text-shadow, 
-    $section3-header-text-color, $line-height: 1.1);
+    @include text-properties($section3HeaderFontSize, $section3HeaderFontWeight,
+    capitalize, 20px auto, 2px 2px $section3HeaderTextShadow, 
+    $section3HeaderTextColor, $line-height: 1.1);
   }
   p {
-    @include text-properties($section3-text-font-size, $margin: 0,
-    $color: $section3-text-color, $line-height: 1.6em);
+    @include text-properties($section3TextFontSize, $margin: 0,
+    $color: $section3TextColor, $line-height: 1.6em);
   }
 }

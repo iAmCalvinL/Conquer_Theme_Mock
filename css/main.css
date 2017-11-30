@@ -439,18 +439,16 @@ body {
 
 .section4 {
   grid-area: section4;
+  display: grid;
+  grid-template-rows: auto;
   background-image: url("../img/bg-3.jpg");
   background-position: center center;
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: auto;
-  grid-template-areas: ". header header ." ". para para ." ". form form .";
-  text-align: center;
   padding: 5.5% 0;
-  color: #000; }
+  color: #000;
+  text-align: center; }
   .section4 h1 {
     grid-area: header;
     font-size: 36px;
@@ -468,68 +466,100 @@ body {
     line-height: 1.6em;
     background: rgba(242, 242, 242, 0.4) none repeat scroll 0 0;
     border-radius: 5px; }
-  .section4 form {
-    grid-area: form;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
-    grid-gap: 10px;
-    grid-template-areas: "name comment" "email comment" "subject comment" ". button"; }
-    .section4 form #name {
-      grid-area: name;
-      background: rgba(242, 242, 242, 0.4);
-      border: none;
-      border-radius: 4px;
-      padding: 6px 12px;
-      line-height: 1.42857143;
-      min-width: 90%;
-      transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s; }
-      .section4 form #name::placeholder {
-        color: inherit; }
-    .section4 form #email {
-      grid-area: email;
-      background: rgba(242, 242, 242, 0.4);
-      border: none;
-      border-radius: 4px;
-      padding: 6px 12px;
-      line-height: 1.42857143;
-      min-width: 90%;
-      transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s; }
-      .section4 form #email::placeholder {
-        color: inherit; }
-    .section4 form #subject {
-      grid-area: subject;
-      background: rgba(242, 242, 242, 0.4);
-      border: none;
-      border-radius: 4px;
-      padding: 6px 12px;
-      line-height: 1.42857143;
-      min-width: 90%;
-      transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s; }
-      .section4 form #subject::placeholder {
-        color: inherit; }
-    .section4 form #comment {
-      grid-area: comment;
-      background: rgba(242, 242, 242, 0.4);
-      border: none;
-      border-radius: 4px;
-      padding: 6px 12px;
-      line-height: 1.42857143;
-      min-width: 90%;
-      transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s; }
-      .section4 form #comment::placeholder {
-        color: inherit; }
-    .section4 form .btn {
-      grid-area: button;
-      background: #262628 none repeat scroll 0 0;
-      font-size: 18px;
-      color: #fff;
-      border-radius: 10px;
-      transition: all 0.3s ease;
-      border-color: #ccc;
-      border: 1px solid #fff; }
-      .section4 form .btn:hover {
-        background-color: #49505F; }
+  .section4 input {
+    background: rgba(242, 242, 242, 0.4);
+    border: none;
+    border-radius: 4px;
+    padding: 6px 12px;
+    line-height: 1.42857143;
+    min-width: 90%;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s; }
+    .section4 input::placeholder {
+      color: inherit; }
+  .section4 textarea {
+    background: rgba(242, 242, 242, 0.4);
+    border: none;
+    border-radius: 4px;
+    padding: 6px 12px;
+    line-height: 1.42857143;
+    min-width: 90%;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s; }
+    .section4 textarea::placeholder {
+      color: inherit; }
+  .section4 .btn {
+    grid-area: button;
+    background: #262628 none repeat scroll 0 0;
+    font-size: 18px;
+    color: #fff;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    border-color: #ccc;
+    border: 1px solid #fff; }
+    .section4 .btn:hover {
+      background-color: #49505F; }
+  @media only screen and (min-width: 1000px) {
+    .section4 {
+      grid-template-columns: 1fr 5fr 1fr;
+      grid-template-areas: ". header ." ". para ." ". form ."; }
+      .section4 form {
+        grid-area: form;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-gap: 10px;
+        grid-template-areas: "name comment" "email comment" "subject comment" ". button"; }
+        .section4 form #name {
+          grid-area: name; }
+        .section4 form #email {
+          grid-area: email; }
+        .section4 form #subject {
+          grid-area: subject; }
+        .section4 form #comment {
+          grid-area: comment; } }
+  @media only screen and (max-width: 999px) and (min-width: 768px) {
+    .section4 {
+      grid-template-columns: 1fr 10fr 1fr;
+      grid-template-areas: ". header ." ". para ." ". form ."; }
+      .section4 form {
+        grid-area: form;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-gap: 10px;
+        grid-template-areas: "name comment" "email comment" "subject comment" ". button"; }
+        .section4 form #name {
+          grid-area: name; }
+        .section4 form #email {
+          grid-area: email; }
+        .section4 form #subject {
+          grid-area: subject; }
+        .section4 form #comment {
+          grid-area: comment; } }
+  @media only screen and (max-width: 767px) {
+    .section4 {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center; }
+      .section4 h1 {
+        width: 88vw; }
+      .section4 p {
+        width: 87vw; }
+      .section4 form {
+        width: 88vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center; }
+        .section4 form input {
+          width: 100%;
+          margin: 1.5% 0; }
+        .section4 form textarea {
+          width: 100%;
+          margin: 1.5% 0; }
+        .section4 form .btn {
+          align-self: stretch;
+          margin-top: 3%; } }
 
 .footer {
   grid-area: footer;

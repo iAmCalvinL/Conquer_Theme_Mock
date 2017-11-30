@@ -22,7 +22,7 @@ $blogParaFontSize: 14px;
     background-color: $btn-white-color;
   }
   img { width: 100%; }
-  article { background-color: $content-background-color; }
+  article { background-color: $contentBackgroundColor; }
   // width: 90vw;
   @media only screen and (min-width: 768px) {
     @include flex-row();

@@ -1,73 +1,122 @@
-$section4-header-text-color: $white;
-$section4-header-font-size: 36px;
-$section4-text-color: $pure-black;
-$section4-para-font-size: 16px;
-$section4-btn-text-color: $white;
-$section4-btn-font-size: 18px;
-$section4-btn-hover-color: $medium-gray;
+$section4HeaderTextColor: $white;
+$section4HeaderFontSize: 36px;
+$section4TextColor: $pure-black;
+$section4ParaFontSize: 16px;
+$section4BtnTextColor: $white;
+$section4BtnFontSize: 18px;
+$section4BtnHoverColor: $medium-gray;
 
 .section4 {
   grid-area: section4;
-  @include load-dynamic-background-image("../img/bg-3.jpg");
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: auto;
-  grid-template-areas: 
-    ". header header ."
-    ". para para ."
-    ". form form .";
-  text-align: center;
-  padding: 5.5% 0;
-  color: $section4-text-color;
+  @include load-dynamic-background-image("../img/bg-3.jpg");
   h1 {
     grid-area: header;
-    @include text-properties($section4-header-font-size, normal, capitalize,
-    0 0 30px 0, 2px 2px $light-black, $section4-header-text-color);
+    @include text-properties($section4HeaderFontSize, normal, capitalize,
+    0 0 30px 0, 2px 2px $light-black, $section4HeaderTextColor);
   }
   p {
     grid-area: para;
-    @include text-properties($section4-para-font-size, $line-height: 1.6em,
+    @include text-properties($section4ParaFontSize, $line-height: 1.6em,
     $padding: 20px 15px, $margin: 0 0 20px 0);
     background: rgba(242, 242, 242, 0.4) none repeat scroll 0 0;
     border-radius: 5px;
   }
-  form {
-    grid-area: form;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
-    grid-gap: 10px;
+  input { @include form-properties(); }
+  textarea { @include form-properties(); }
+  padding: 5.5% 0;
+  color: $section4TextColor;
+  text-align: center;
+  .btn { 
+    grid-area: button; 
+    background: $black none repeat scroll 0 0;
+    font-size: $section4BtnFontSize;
+    color: $section4BtnTextColor;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    border-color: $gray2;
+    border: 1px solid $white;
+    &:hover { background-color: $section4BtnHoverColor; }
+  }
+  
+  @media only screen and (min-width: 1000px) {
+    grid-template-columns: 1fr 5fr 1fr;
     grid-template-areas: 
-      "name comment"
-      "email comment"
-      "subject comment"
-      ". button";
-    #name { 
-      grid-area: name;
-      @include form-properties();
+      ". header ."
+      ". para ."
+      ". form .";
+    form {
+      grid-area: form;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+      grid-gap: 10px;
+      grid-template-areas: 
+        "name comment"
+        "email comment"
+        "subject comment"
+        ". button";
+      #name { grid-area: name; }
+      #email { grid-area: email; }
+      #subject { grid-area: subject; }
+      #comment { grid-area: comment;}
     }
-    #email { 
-      grid-area: email; 
-      @include form-properties();
+  }
+
+  @media only screen and (max-width: 999px) and (min-width: 768px) {
+    grid-template-columns: 1fr 10fr 1fr;
+    grid-template-areas: 
+      ". header ."
+      ". para ."
+      ". form .";
+    form {
+      grid-area: form;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+      grid-gap: 10px;
+      grid-template-areas: 
+        "name comment"
+        "email comment"
+        "subject comment"
+        ". button";
+        #name { grid-area: name; }
+        #email { grid-area: email; }
+        #subject { grid-area: subject; }
+        #comment { grid-area: comment;}
     }
-    #subject { 
-      grid-area: subject;
-      @include form-properties();
+  }
+
+  @media only screen and (max-width: 767px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    h1 {
+      width: 88vw;
     }
-    #comment { 
-      grid-area: comment;
-      @include form-properties(); 
+    p {
+      width: 87vw;
     }
-    .btn { 
-      grid-area: button; 
-      background: $black none repeat scroll 0 0;
-      font-size: $section4-btn-font-size;
-      color: $section4-btn-text-color;
-      border-radius: 10px;
-      transition: all 0.3s ease;
-      border-color: $gray2;
-      border: 1px solid $white;
-      &:hover { background-color: $section4-btn-hover-color; }
+    form {
+      input { 
+        width: 100%; 
+        margin: 1.5% 0;
+      }
+      textarea { 
+        width: 100%; 
+        margin: 1.5% 0;
+      }
+      width: 88vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      .btn { 
+        align-self: stretch; 
+        margin-top: 3%;
+      }
     }
   }
 }

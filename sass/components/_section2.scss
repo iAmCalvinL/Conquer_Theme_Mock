@@ -7,7 +7,7 @@ $section2ParaFontSize: 14px;
 
 .section2 {
   grid-area: section2;
-  article { background-color: $content-background-color; }
+  article { background-color: $contentBackgroundColor; }
   margin: 6% 0;
   img { width: 100%; }
   p { 
