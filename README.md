@@ -3,4 +3,4 @@ Built with CSS/Sass. My attempt at creating a single page with CSS/Sass of the C
 Current Status: Complete
 
 See the live deployed version here: 
-[https://calvinlin1992.github.io/Conquer_Theme_Mock/](https://iamcalvinl.github.io/Conquer_Theme_Mock/)https://iamcalvinl.github.io/Conquer_Theme_Mock/ 
+[https://iamcalvinl.github.io/Conquer_Theme_Mock/](https://iamcalvinl.github.io/Conquer_Theme_Mock/)
